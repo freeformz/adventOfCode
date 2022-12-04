@@ -2,29 +2,25 @@ package day2b
 
 import readInput
 
-enum class Play {
-    Rock {
+enum class Play(val value: Int) {
+    Rock(1) {
         override fun beats(o: Play) = o == Rock.winsAgainst()
         override fun winsAgainst() = Scissors
         override fun loosesAgainst(): Play = Paper
-        override fun value() = 1
     },
-    Paper {
+    Paper(2) {
         override fun beats(o: Play) = o == Paper.winsAgainst()
         override fun winsAgainst() = Rock
         override fun loosesAgainst(): Play = Scissors
-        override fun value() = 2
     },
-    Scissors {
+    Scissors(3) {
         override fun beats(o: Play) = o == Scissors.winsAgainst()
         override fun winsAgainst() = Paper
         override fun loosesAgainst(): Play = Rock
-        override fun value() = 3
     };
     abstract fun winsAgainst(): Play
     abstract fun loosesAgainst(): Play
     abstract fun beats(o: Play): Boolean
-    abstract fun value(): Int
 }
 
 val win = 6
@@ -45,11 +41,11 @@ fun main() {
             else -> throw Exception("unknown input")
         }
         if (me == op) {
-            me.value() + draw
+            me.value + draw
         } else if (me.beats(op)) {
-            me.value() + win
+            me.value + win
         } else {
-            me.value()
+            me.value
         }
     }
 
