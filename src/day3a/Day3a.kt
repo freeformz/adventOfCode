@@ -20,7 +20,6 @@ fun main() {
             else -> throw Exception("unknown value")
         }
     }.sumOf {
-        println(it)
         it
     }
     println(sum)
