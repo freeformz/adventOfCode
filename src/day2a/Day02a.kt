@@ -19,12 +19,12 @@ val win = 6
 val draw = 3
 
 fun main() {
-    val sum = readInput("day2").sumOf {
+    val sum = readInput("day2").sumOf {input ->
         val op = Play.values().first { pv ->
-            pv.opInput == it.first()
+            pv.opInput == input.first()
         }
         val me = Play.values().first { pv ->
-            pv.myInput == it.last()
+            pv.myInput == input.last()
         }
         if (me == op) {
             me.value + draw
