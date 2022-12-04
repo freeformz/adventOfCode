@@ -3,15 +3,16 @@ package day2a
 import readInput
 
 enum class Play(val value: Int, val opInput: Char, val myInput: Char) {
-    Rock(1,'A','X') {
+    Rock(1, 'A', 'X') {
         override fun beats(o: Play) = o == Scissors
     },
-    Paper(2,'B','Y') {
+    Paper(2, 'B', 'Y') {
         override fun beats(o: Play) = o == Rock
     },
-    Scissors(3,'C','Z') {
+    Scissors(3, 'C', 'Z') {
         override fun beats(o: Play) = o == Paper
     };
+
     abstract fun beats(o: Play): Boolean
 }
 
@@ -19,7 +20,7 @@ val win = 6
 val draw = 3
 
 fun main() {
-    val sum = readInput("day2").sumOf {input ->
+    val sum = readInput("day2").sumOf { input ->
         val op = Play.values().first { pv ->
             pv.opInput == input.first()
         }

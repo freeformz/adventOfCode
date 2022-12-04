@@ -6,7 +6,7 @@ fun main() {
     var currentElf = 0
     val max = readInput("day1").groupBy {// group values by elf
         if (it.isEmpty()) {
-            currentElf ++
+            currentElf++
         } else {
             currentElf
         }
@@ -14,9 +14,7 @@ fun main() {
         values.sumOf {
             it.ifEmpty { "0" }.toInt()
         }
-    }.sortedDescending().
-    slice(0..2).
-    sum()
+    }.sortedDescending().slice(0..2).sum()
 
     println(max)
 }
