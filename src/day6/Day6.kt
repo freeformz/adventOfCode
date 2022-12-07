@@ -3,10 +3,10 @@ package day6
 import readInput
 
 fun main() {
-    fun firstRepeatingSetOfSize(input: List<String>, size: Int): List<Int> {
-        var result = mutableListOf<Int>()
+    fun firstNonRepeatingSetOfSize(input: List<String>, size: Int): List<Int> {
+        val result = mutableListOf<Int>()
         input.forEach {
-            var q = mutableListOf<Char>()
+            val q = mutableListOf<Char>()
             for ((i, c) in it.withIndex()) {
                 q.add(c)
                 if (q.count() == size + 1) {
@@ -24,11 +24,11 @@ fun main() {
     }
 
     fun partOne(input: List<String>) {
-        firstRepeatingSetOfSize(input, 4).forEach { println(it) }
+        firstNonRepeatingSetOfSize(input, 4).forEach { println(it) }
     }
 
     fun partTwo(input: List<String>) {
-        firstRepeatingSetOfSize(input, 14).forEach { println(it) }
+        firstNonRepeatingSetOfSize(input, 14).forEach { println(it) }
     }
 
     println("partOne test")
