@@ -3,7 +3,9 @@ package day13
 import readInput
 
 fun main() {
-    fun parseInput(input: List<String>) {}
+    @Suppress("UNUSED_PARAMETER")
+    fun parseInput(input: List<String>) {
+    }
 
     fun partOne(input: List<String>) {
         parseInput(input)

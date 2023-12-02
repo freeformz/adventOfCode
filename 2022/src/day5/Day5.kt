@@ -3,12 +3,12 @@ package day5
 import readInput
 
 fun parseStackInput(stackInput: List<String>): List<ArrayDeque<Char>> {
-    val stacks = stackInput[0].split(" ").mapNotNull { it.ifEmpty { null }?.toInt() ?: null }.map {
+    val stacks = stackInput[0].split(" ").mapNotNull { it.ifEmpty { null }?.toInt() }.map {
         ArrayDeque<Char>()
     }
     stackInput.drop(1).forEach {
-        it.chunked(4).forEachIndexed { i, it ->
-            val c = it[1]
+        it.chunked(4).forEachIndexed { i, its ->
+            val c = its[1]
             if (!c.isWhitespace()) {
                 stacks[i].addLast(c)
             }
@@ -30,8 +30,8 @@ fun parseInput(input: List<String>): Pair<List<String>, List<String>> {
         }
     }
     return Pair(
-        parts["stacks"]?.reversed() ?: throw Exception("invalid input"),
-        parts["moves"] ?: throw Exception("invalid input")
+            parts["stacks"]?.reversed() ?: throw Exception("invalid input"),
+            parts["moves"] ?: throw Exception("invalid input")
     )
 }
 
@@ -67,7 +67,7 @@ fun partTwo(stacks: List<ArrayDeque<Char>>, movesInput: List<String>) {
             dst.addLast(i)
         }
     }
-    
+
     println(stacks.fold("") { out, stack -> out + stack.last() })
 }
 
