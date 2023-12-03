@@ -2,7 +2,7 @@ package x2023
 
 open class Day01AExample {
     open val inputLines: List<String> = read2023Input("day01a-example")
-    open val final = 142
+    open val expected = 142
     open var answer: Int = 0
     fun run() {
         println(this.javaClass.name)
@@ -16,23 +16,22 @@ open class Day01AExample {
     }
 
     fun check() {
-        assert(answer == final)
+        assert(answer == expected)
         println()
     }
 }
 
 class Day01A : Day01AExample() {
     override val inputLines: List<String> = read2023Input("day01a")
-    override val final = 54916
-    override var answer: Int = 0
+    override val expected = 54916
 }
 
 data class MInt(val s: String, val v: Int)
 
 open class Day01BExample {
     open val inputLines: List<String> = read2023Input("day01b-example")
-    open val final = 281
-    open var answer: Int = 54728
+    open val expected = 281
+    open var answer: Int = 0
 
     private val findValues = listOf(
         MInt("one", 1),
@@ -77,15 +76,14 @@ open class Day01BExample {
     }
 
     fun check() {
-        assert(answer == final)
+        assert(answer == expected)
         println()
     }
 }
 
 class Day01B : Day01BExample() {
     override val inputLines: List<String> = read2023Input("day01b")
-    override val final = 54728
-    override var answer: Int = 0
+    override val expected = 54728
 }
 
 fun main() {
