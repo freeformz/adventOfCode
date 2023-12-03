@@ -46,7 +46,7 @@ class Day02A : Day02AExample() {
     override val expected = 1734
 }
 
-fun List<Dice>.minimum(set: List<Dice>): List<Dice> {
+fun List<Dice>.minimumRequired(set: List<Dice>): List<Dice> {
     return this.map { die ->
         val other = set.singleOrNull { d -> d.color == die.color }
         when (other) {
@@ -73,7 +73,7 @@ open class Day02BExample {
                     Dice(p2.last(), p2.first().toInt())
                 }
             }.fold(listOf(Dice("red", 0), Dice("green", 0), Dice("blue", 0))) { g, set ->
-                g.minimum(set)
+                g.minimumRequired(set)
             }.fold(1) { mul, die ->
                 mul * die.count
             }
