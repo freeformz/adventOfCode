@@ -1,11 +1,10 @@
-package day1a
+package day1b
 
 import readInput
 
 fun main() {
     var currentElf = 0
-    readInput("day1")
-    val max = readInput("day1").groupBy {// group values by elf
+    val max = readInput("day01").groupBy {// group values by elf
         if (it.isEmpty()) {
             currentElf++
         } else {
@@ -15,7 +14,7 @@ fun main() {
         values.sumOf {
             it.ifEmpty { "0" }.toInt()
         }
-    }.max()
+    }.sortedDescending().slice(0..2).sum()
 
     println(max)
 }

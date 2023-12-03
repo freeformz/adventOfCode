@@ -10,6 +10,9 @@ repositories {
 
 tasks {
     compileKotlin {
+        compilerOptions {
+            freeCompilerArgs.add("-Xassertions=always-enable")
+        }
         kotlinOptions {
             jvmTarget = "19"
         }
@@ -17,8 +20,8 @@ tasks {
 
     sourceSets {
         main {
-            java.srcDirs("2022/src")
-            java.srcDirs("2023/src")
+            //java.srcDirs("2022/src")
+            java.srcDirs("kotlin/src")
         }
     }
 
