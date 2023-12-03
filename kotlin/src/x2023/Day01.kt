@@ -84,7 +84,7 @@ open class Day01BExample {
 
 class Day01B : Day01BExample() {
     override val inputLines: List<String> = read2023Input("day01b")
-    override val final = 54916
+    override val final = 54728
     override var answer: Int = 0
 }
 
